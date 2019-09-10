@@ -25,7 +25,7 @@ Installing requirements
 ## Usage
 
 ```bash
-(env36)$ python run.py [port]
+(env36)$ python run.py [port default:8000]
 ```
 
 the access credentials will be displayed in the terminal window.
