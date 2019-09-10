@@ -9,18 +9,18 @@ Hello friend, This is an application to clone phones
 This version supports python 3.6 onwards
 
 ```bash
-virtualenv -p python3 env36
+$ virtualenv -p python3 env36
 ```
 Active virtualenviroment
 
 ```bash
-source env36/bin/activate
+$ source env36/bin/activate
 ```
 
 ## Usage
 
 ```bash
-python run.py [port]
+(env36) python run.py [port]
 ```
 
 the access credentials will be displayed in the terminal window.
