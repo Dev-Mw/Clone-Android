@@ -1,0 +1,249 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CA - Clone Android</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+	{% if pk == '' %}
+	<div class="login">
+		<center>
+			<div class="card col-lg-3">
+			  	<div class="card-body">
+			  		<img src="{% static 'img/CA.png' %}" class="col-lg-12">
+			  		<h4 class="card-title text-center">Clone <strong class="strong">Android</strong></h4>
+			    	<hr>
+			    	<form class="text-left" autocomplete="false">
+					  	<div class="form-group">
+					    	<label for="exampleInputEmail1">User</label>
+					    	<input type="text" class="form-control" id="user" placeholder="John Doe">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="exampleInputPassword1">Password</label>
+					    	<input type="password" class="form-control" id="pass" placeholder="********">
+					  	</div>
+					  	{% if ar == '' %}
+					  	<small id="credInvalid" class="form-text text-muted credInvalid">
+					  		Credentials invalid. :(
+					  	</small>
+					  	{% endif %}
+					</form>
+			    	<a href="#" id="login" class="btn btn-danger btn-full col-lg-12">Log in</a>
+			  	</div>
+			</div>
+		</center>
+	</div>
+	{% else %}
+	<br>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="col-lg-6 row">
+						<img src="/static/img/CA.png" class="img-fluid img-responsive col-lg-4">
+						<h3 class="title-clone">Clone <strong class="strong">Android</strong></h3>
+					</div>
+					<div class="col-lg-6 text-right data-des">
+						<span> By <a href="#">Dario Sotelo</a></span><br>
+						<var>Version 1.0</var>
+					</div>
+				</div>
+				
+				<hr>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title-sub row">
+							<h3 class="col-lg-6">&nbsp;Devices <small>(Shell - USB)</small></h3>
+							<div class="col-lg-6 text-right row">
+								
+								<div class="input-group col-lg-9">
+									<input type="text" class="form-control" placeholder="IP" aria-label="Example text with button addon" id="serial_connect" style="border-radius: 20px 0px 0px 20px;">
+								  	<div class="input-group-prepend">
+								    	<button class="btn btn-info" style="height: 38px;border-radius: 0px 20px 20px 0px;" type="button" id="ip_connect" onclick="Connect()">
+								    		Connect
+								    	</button>
+								  	</div>
+								</div>
+
+								<button type="button" class="btn btn-light reload col-lg-3" onclick="Reload()">
+									<img src="/static/img/loading.gif" class="reload-img"> Reload
+								</button>
+							</div>
+						</div>
+						<br>
+
+						<div class="list-devices" id="list-devices-shell">
+							
+						</div>
+
+						<br>
+					</div>
+					<!--div class="col-lg-5">
+						<div class="title-sub">
+							<h3>&nbsp;Malware <small>( .jar, .apk )</small></h3>
+						</div>
+						<table class="table table-bordered table-hover">
+						  	<thead class="thead-light">
+						    	<tr>
+						      		<th scope="col">#</th>
+						      		<th scope="col">First</th>
+						      		<th scope="col">Last</th>
+						      		<th scope="col">Handle</th>
+						    	</tr>
+						  	</thead>
+						  	<tbody>
+							    <tr>
+								    <th scope="row">1</th>
+								    <td>Mark</td>
+								    <td>Otto</td>
+								    <td>@mdo</td>
+							    </tr>
+						    	<tr>
+						      		<th scope="row">2</th>
+						      		<td>Jacob</td>
+						      		<td>Thornton</td>
+						      		<td>@fat</td>
+						    	</tr>
+						    	<tr>
+						      		<th scope="row">3</th>
+						      		<td>Larry</td>
+						      		<td>the Bird</td>
+						      		<td>@twitter</td>
+						    	</tr>
+						  	</tbody>
+						</table>
+					</div-->
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	{% endif %}
+
+	<script type="text/javascript">
+
+		window.onload = function () {
+			Reload();
+		};
+
+		$(document).ready(function () {
+
+			$("#login").click(function () {
+				var user = $("#user").val();
+				var pass = $("#pass").val();
+				var urlf = '/'+user+'/'+pass+'';
+				$.get(urlf, function (data, status) {
+					window.location.href = urlf;
+				});
+			});
+
+		});
+
+		function Reload() {
+			$(".reload-img").css("display","initial");
+			var urlf = '/devices';
+
+			$.get(urlf, function (data, status) {
+				$("#list-devices-shell").html("");
+				if (status == 'success') {
+					$(".reload-img").css("display","none");
+					if (data['devices'] == '') {
+						$("#list-devices-shell").html('\n\
+							<div class="alert alert-secondary alert-not" role="alert">\n\
+								No devices founded!\n\
+							</div>');
+					}
+					else {
+						for(var i = 0; i < data['devices'].length; i++){
+
+							var id 		= data['devices'][i].id;
+							var type 	= data['devices'][i].type_status;
+							var serial 	= data['devices'][i].serial_ip;
+							var ip 		= data['devices'][i].ip;
+							var model 	= data['devices'][i].model;
+							var product = data['devices'][i].product;
+							var usb 	= data['devices'][i].usb;
+							var btns 	= "disabled";
+
+							if (ip == "Unauthorized") { btns = 'disabled'; }
+							else { btns = ''; }
+							
+							$("#list-devices-shell").append('\n\
+								<div class="row device">\n\
+									<div class="col-lg-1">\n\
+										<img src="/static/img/android.png" class="icon-device" style="width: 100%">\n\
+									</div>\n\
+									<div class="col-lg-7">\n\
+										IP: <strong class="strong">'+ip+'</strong><br>\n\
+										Serial: <strong class="strong">'+serial+'</strong><br>\n\
+										Type/Status: <strong class="strong">'+type+'</strong>&nbsp; {% if type == "Unauthorized" %}<button type="button" class="btn btn-success btn-sm"> Reconnect </button>{% endif %}<br>\n\
+										Details: <strong class="strong">'+model+' '+product+' '+usb+'</strong>\n\
+									</div>\n\
+									<div class="col-lg-4">\n\
+										<div class="btn-group group-btn" role="group" aria-label="Basic example">\n\
+											<button type="button" class="btn btn-secondary one" '+btns+'>Details</button>\n\
+											<button type="button" class="btn btn-danger three" '+btns+'>Infect</button>\n\
+											<button type="button" class="btn btn-primary two" id="btnclone'+id+'" onclick="Clone(`'+id+'`)" '+btns+'>Clone</button>\n\
+										</div>\n\
+									</div>\n\
+								</div>\n\
+								<br>');
+						}
+					}
+				}
+				else{
+					$("#list-devices-shell").html("<h2>Error</h2>");
+				}
+			});
+		}
+
+		function Clone(id) {
+			$("#btnclone"+id).attr("disabled","disabled");
+			$("#btnclone"+id).text("Clonning");
+			$("#btnclone"+id).attr("class","btn btn-success two");
+			var urlf = '/clone/'+id;
+			$.get(urlf, function (data, status) {
+				$("#btnclone"+id).text("Ok");
+				$("#btnclone"+id).attr("class","btn btn-info two");
+				setTimeout(function () {
+					$("#btnclone"+id).removeAttr("disabled");
+					$("#btnclone"+id).text("Clone");
+					$("#btnclone"+id).attr("class","btn btn-primary two");
+				},2000);
+			});
+		}
+
+		function Connect() {
+			var ip = $("#serial_connect").val();
+			if (ip == '') {
+				alert('Field empty');
+			}
+			else {
+				$("#ip_connect").attr("disabled","disabled");
+				$("#ip_connect").attr("class","btn btn-success");
+				$("#ip_connect").text("Connecting");
+				var urlf = '/connect/'+ip;
+				$.get(urlf, function (data, status) {
+					if (data.data == 'ok') {
+
+					}
+					Reload();
+					$("#serial_connect").val("");
+					$("#ip_connect").removeAttr("disabled");
+					$("#ip_connect").attr("class","btn btn-info");
+					$("#ip_connect").text("Connect");
+				});
+			}
+		}
+
+	</script>
+</body>
+</html>

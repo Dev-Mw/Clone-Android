@@ -1,0 +1,71 @@
+@font-face {
+	font-family: roboto;
+	src: url('/static/fonts/roboto/Roboto-Light.ttf');
+}
+@font-face {
+	font-family: robotoBold;
+	src: url('/static/fonts/roboto/Roboto-Bold.ttf');
+}
+* {
+	font-family: roboto;
+}
+.login {
+	margin-top: 5%;
+}
+.credInvalid {
+	padding-bottom: 10px;
+	color: red !important;
+}
+.card-title {
+	margin-top: 20px !important;
+}
+.title-clone {
+	margin-top: 10px;
+}
+.data-des var,.data-des span {
+	color: darkgray !important;
+	font-size: 13px !important;
+}
+.device {
+	padding: 10px !important;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	background: #f9f9f9 !important;
+	border-radius: 200px !important; 
+}
+
+.one {
+	border-radius: 200px 0px 0px 200px;
+}
+.two {
+	border-radius: 0px 200px 200px 0px;
+}
+.info-small-device {
+	font-size: 12px !important;
+	color: dimgray !important;
+}
+.reload {
+	border-radius: 300px !important;
+}
+.reload-img {
+	width: 20px;
+	display: none;
+}
+.history {
+	border-radius: 300px !important;
+}
+.strong {
+	font-family: robotoBold;
+}
+.group-btn {
+	margin-top: .8em !important;
+}
+.alert-not {
+	border-radius: 200px !important;
+}
+.hr {
+	width: 70% !important;
+}
+.icon-device {
+	width: 100% !important;
+}
