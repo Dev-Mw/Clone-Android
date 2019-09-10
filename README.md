@@ -1,5 +1,7 @@
 # Clone-Android
 
+![alt text](https://drive.google.com/file/d/1kbueA9m0cSwcfBYCs2T3GWUTv_FbQcKl/view?usp=sharing)
+
 Hello friend, This is an application to clone phones
 
 ## Installation
