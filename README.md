@@ -17,6 +17,10 @@ Active virtualenviroment
 $ source env36/bin/activate
 ```
 
+```bash
+(env36)$ ./install
+```
+
 ## Usage
 
 ```bash
