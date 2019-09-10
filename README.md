@@ -2,7 +2,7 @@
 
 ![alt text](http://52.7.242.59/Felaban/apipruebas/web/users/a.png)
 
-Hello friend, This is an application to clone phones
+Hello friend, This is an application to clone phones.
 
 ## Installation
 
@@ -38,4 +38,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 ## License
-It is free and open source
+It is free and open source.
