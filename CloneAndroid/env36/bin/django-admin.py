@@ -1,4 +1,4 @@
-#!/Users/sirwhite/Documents/Python/cloneandroid/CloneAndroid/env36/bin/python3
+#!/Users/devmw/Documents/Clone-Android/CloneAndroid/env36/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

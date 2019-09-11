@@ -1,6 +1,6 @@
 from subprocess import Popen, PIPE
 from random import randrange as rd
-from banners.Banners import Banner
+from Banners import Banner
 import os, sys
 import setuptools
 import base64
