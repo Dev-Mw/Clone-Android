@@ -54,7 +54,6 @@ Obfuscate – renames the remaining classes, fields, and methods using short mea
 
 Hope it helps you to some extent.
 
-If you want to know more about on how android apps are built and run, Read this.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
