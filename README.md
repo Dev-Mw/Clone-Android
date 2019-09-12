@@ -38,9 +38,13 @@ open your browser
 ## Information
 
 Actually, android studio does the conversion and the term you used 'compress' happens by default while building.
+
 The compilation process for Android apps is very different from other Java applications. But it begins in the same way: your Java source code files are compiled into .class files using the javac command:
+
 The .class files contain standard Oracle JVM Java byte-codes. But Android devices dont use this byte-code format. Instead, Android has its own distinct byte-code format called Dalvik. Dalvik byte-codes, like Oracle JVM byte-codes, are machine-code instructions for a theoretical processor.
+
 The compilation process needs to convert the .class files, and any .jar libraries into a single classes.dex file containing Dalvik byte-codes. This is done with the dx command: This is how your classes.dex file is generated.
+
 The classes.dex file and the resources from your application, such as images and layouts, are then compressed into a zip-like file called an Android Package or .apk file. This is done with the Android Asset Packaging Tool or aapt:
 Your proguard rules, during the build process, help to
 
