@@ -19,7 +19,8 @@ $ source env36/bin/activate
 Installing requirements
 
 ```bash
-(env36)$ ./install
+(env36)$ ./install -h   # see options
+(env36)$ ./install [target]
 ```
 
 ## Usage
