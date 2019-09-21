@@ -30,7 +30,7 @@ def DevicesOn(request):
 		for x in deviceC:
 			if x != '':
 				deviceF.append(x)
-		print(deviceF)
+				
 		if 'unauthorized' not in deviceF:
 			wlan0 = Actions.Ips(deviceF[0])
 			if wlan0 != '':

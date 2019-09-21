@@ -31,7 +31,6 @@ class Actions(object):
 			return ''
 
 	def ConnectDevice(self, ip):
-		os.system("./exec connect {ip}:5555".format(ip=ip))
 		process = Popen(["./exec", "connect", "{ip}:5555".format(ip=ip)], stdout=PIPE, stderr=PIPE)
 		(result, error) = process.communicate()
 		return result
