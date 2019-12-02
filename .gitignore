@@ -1,3 +1,5 @@
 *.c
 env36/
 commandGit.txt
+.DS_Store
+.gitignore
