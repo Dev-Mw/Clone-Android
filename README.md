@@ -1,4 +1,4 @@
-# Clone Android  - V2.0
+# Clone Android
 
 
 ![alt text](http://52.7.242.59/Felaban/apipruebas/web/users/a.png)
@@ -27,7 +27,7 @@ Installing requirements
 ## Usage
 
 ```bash
-(env36)$ ./CAndroid [port default:8000]
+(env36)$ python run.py [port default:8000]
 ```
 
 the access credentials will be displayed in the terminal window.
