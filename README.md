@@ -15,24 +15,25 @@ $ cd Clone-Android
 This version supports python 3.6 onwards
 
 ```bash
-$ virtualenv -p python3 env36
+$ virtualenv -p python3 env
 ```
 Active virtualenviroment
 
 ```bash
-$ source env36/bin/activate
+$ source env/bin/activate
+(env)$ cd ./CloneAndroid-V1
 ```
 Installing requirements
 
 ```bash
-(env36)$ ./install -h   # see options
-(env36)$ ./install [target]
+(env)$ ./install -h   # see options
+(env)$ ./install [target]
 ```
 
 ## Usage
 
 ```bash
-(env36)$ python run.py [port default:8000]
+(env)$ python run.py [port default:8000]
 ```
 
 the access credentials will be displayed in the terminal window.
