@@ -41,7 +41,7 @@ open your browser
 
 ![Android](http://blackhatrabbits.org/images/android2.png)
 
-![Android](http://blackhatrabbits.org/images/android3.png)
+![Android](http://blackhatrabbits.org/images/android2.png)
 
 ## Information
 
