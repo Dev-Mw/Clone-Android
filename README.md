@@ -39,9 +39,9 @@ Installing requirements
 the access credentials will be displayed in the terminal window.
 open your browser
 
-![browser](http://52.7.242.59/Felaban/apipruebas/web/users/ab.png)
+![Android](http://blackhatrabbits.org/images/android1.png)
 
-![browser](http://52.7.242.59/Felaban/apipruebas/web/users/abc.png)
+![Android](http://52.7.242.59/Felaban/apipruebas/web/users/abc.png)
 
 ## Information
 
