@@ -5,6 +5,11 @@
 
 Hello friend, This is an application to clone phones.
 
+```bash
+$ git clone https://github.com/Dev-Mw/Clone-Android.git
+$ cd Clone-Android
+```
+
 ## Installation
 
 This version supports python 3.6 onwards
