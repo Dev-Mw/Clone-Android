@@ -9,12 +9,12 @@ Hello friend, This is an application to clone phones.
 This version supports python 3.6 onwards
 
 ```bash
-$ virtualenv -p python3 env36
+$ virtualenv -p python3 env
 ```
 Active virtualenviroment
 
 ```bash
-$ source env36/bin/activate
+$ source env/bin/activate
 ```
 Installing requirements
 
