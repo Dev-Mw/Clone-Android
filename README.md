@@ -1,41 +1,47 @@
 # Clone Android
 
 
-![alt text](http://52.7.242.59/Felaban/apipruebas/web/users/a.png)
+![Adnroid](http://blackhatrabbits.org/images/android.png)
 
 Hello friend, This is an application to clone phones.
+
+```bash
+$ git clone https://github.com/Dev-Mw/Clone-Android.git
+$ cd Clone-Android
+```
 
 ## Installation
 
 This version supports python 3.6 onwards
 
 ```bash
-$ virtualenv -p python3 env36
+$ virtualenv -p python3 env
 ```
 Active virtualenviroment
 
 ```bash
-$ source env36/bin/activate
+$ source env/bin/activate
+(env)$ cd ./CloneAndroid-V1
 ```
 Installing requirements
 
 ```bash
-(env36)$ ./install -h   # see options
-(env36)$ ./install [target]
+(env)$ ./install -h   # see options
+(env)$ ./install [target]
 ```
 
 ## Usage
 
 ```bash
-(env36)$ python run.py [port default:8000]
+(env)$ python run.py [port default:8000]
 ```
 
 the access credentials will be displayed in the terminal window.
 open your browser
 
-![browser](http://52.7.242.59/Felaban/apipruebas/web/users/ab.png)
+![Android](http://blackhatrabbits.org/images/android2.png)
 
-![browser](http://52.7.242.59/Felaban/apipruebas/web/users/abc.png)
+![Android](http://blackhatrabbits.org/images/android4.png)
 
 ## Information
 
